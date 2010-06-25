@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tweetalyst</title>
+  <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/dark-hive/jquery-ui.css" rel="Stylesheet" />
+  <link type="text/css" rel="stylesheet" media="screen" href="/static/static.css" rel="Stylesheet" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/static.js"></script>
+ </head>
+ <body>
+  <div id="header"><a href="/"><div id="logo">Tweetalyst!</div></a>
+   <div class="options">
+[% IF c.user_exists() %]
+    <a href="/[% c.user.username %]">Home</a><a href="/logout">Sign-Out</a>
+[% ELSE %]
+    <a href="/login">Sign-In</a><a href="/join">Join us!</a>
+[% END %]
+
+   </div>
+   <div class="search ui-widget">
+    <form action="/search" method="GET">
+    <input id="search" name="query" type="text" value="" /><input type="submit" value=">" />
+    </form>
+   </div>
+  </div>
+
+  [% content %]
+
+  <div id="footer" class="ui-corner-all">Tweetalyst is Powered by <a href="http://perl.org">Perl 5</a>, <a href="http://www.catalystframework.org/">Catalyst</a>, <a href="http://search.cpan.org/perldoc?ORLite">ORLite</a> and <a href="http://jquery.org">jQuery</a>! Released under <a href="http://dev.perl.org/licenses/">the same terms as Perl itself</a>. </div>
+ </body>
+</html>

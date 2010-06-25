@@ -1,0 +1,13 @@
+catalyst.pl Tweetalyst::Web
+cd Tweetalyst-Web/
+mkdir db
+cd db/
+vim tweetalyst.sql
+sqlite3 tweetalyst.db < tweetalyst.sql
+cd ..
+script/tweetalyst_web_create.pl view TT TT
+[ Add Unicode::Encoding to Tweetalyst/Web.pm ]
+script/tweetalyst_web_create.pl model DBIC DBIC::Schema Tweetalyst::Schema create=static dbi:SQLite:db/tweetalyst.db
+
+script/tweetalyst_web_create.pl view JSON JSON
+tweetalyst_web.conf 에 default_view TT 추가

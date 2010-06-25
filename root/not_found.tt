@@ -1,0 +1,5 @@
+[% WRAPPER main.tt title = c.config.name %]
+<div id="content" class="full ui-corner-all">
+<h3>Sorry, we couldn't find the page you were looking for :-(</h3>
+</div>
+[% END %]

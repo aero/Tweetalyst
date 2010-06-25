@@ -1,0 +1,8 @@
+Tweetalyst
+
+    Quick & Dirty Catalyst port of http://github.com/garu/tweetylicious
+
+This is not stable and may have flaws. :|
+Use only for testing and learning purposes.
+
+Run script/tweetalyst_web_server.pl to test the application.

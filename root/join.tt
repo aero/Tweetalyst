@@ -1,0 +1,23 @@
+[% WRAPPER main.tt title = c.config.name %]
+<div id="content" class="full ui-corner-all">
+<h1>Join us, it's free!</h1>
+[% IF error %]
+ <div class="ui-state-error ui-corner-all" style="width:450px">
+     <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em"></span><strong>Sorry:</strong> [% error %]
+ </div>
+ <hr />
+[% END %]
+<form name="join" method="POST">
+ <table>
+  <tr><td>Username</td><td><input name="username" type="text" tabindex="1" value="" /></td></tr>
+  <tr><td>Password</td><td><input name="pwd" type="password" tabindex="2" value="" /></td></tr>
+  <tr><td>Password (again)</td><td><input name="re-pwd" type="password" tabindex="3" value="" /></td></tr>
+  <tr><td>Email</td><td><input name="email" type="text" tabindex="4" value="" /></td></tr>
+  </table>
+  <span class="fineprint">Email is optional, and doesn't show in your page. It's used only to fetch your <a href="http://gravatar.com">gravatar</a></span>
+ <p>Tell us a bit about yourself - everyone will see it on your page</p>
+ <textarea class="ui-corner-all" tabindex="5" cols="50" rows="3" id="message" name="bio"></textarea>
+ <input type="submit" tabindex="6" value="Create!" />
+</form>
+</div>
+[% END %]
